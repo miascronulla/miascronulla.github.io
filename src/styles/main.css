@@ -265,7 +265,7 @@ html:not(.js) .seg{display:none}
 .tag-gfo{color:#6b4423;border-color:#6b4423;background:#f4e6d6}
 .cat{margin-bottom:44px;scroll-margin-top:calc(var(--hh) + 64px)}
 .cat-head{border-bottom:2px solid var(--green-800);margin-bottom:6px;padding-bottom:10px}
-.cat-head h3{font-size:clamp(1.6rem,6vw,2.2rem);margin:0}
+.cat-head h2{font-size:clamp(1.6rem,6vw,2.2rem);margin:0}
 .cat-sub{font-family:var(--font-display);font-style:italic;color:var(--burgundy);margin:.1em 0 0;font-size:1.1rem}
 .cat-sizes{display:flex;flex-wrap:wrap;gap:6px 20px;margin:.6em 0 0;font-size:1.1rem}
 .cat-sizes strong{font-family:var(--font-display);color:var(--burgundy);font-size:1.25rem}

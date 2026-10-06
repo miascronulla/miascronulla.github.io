@@ -26,7 +26,7 @@ function item(it) {
   const star = it.featured ? '<span class="signature" title="Signature dish">★ Signature</span>' : '';
   return `<li class="item${it.featured ? ' is-featured' : ''}${it.description || it.note ? '' : ' item-plain'}">
     <div class="item-row">
-      <h4 class="item-name">${esc(it.name)}${it.serves ? ` <span class="serves">(${esc(it.serves)})</span>` : ''} ${tags(it.tags)}${star}</h4>
+      <h3 class="item-name">${esc(it.name)}${it.serves ? ` <span class="serves">(${esc(it.serves)})</span>` : ''} ${tags(it.tags)}${star}</h3>
       ${it.sizes || !it.price ? '' : '<span class="leader" aria-hidden="true"></span>'}
       ${priceBlock(it)}
     </div>
@@ -39,7 +39,7 @@ function category(c) {
   const sizes = c.sizes ? `<p class="cat-sizes">${c.sizes.map((s) => `<span><span class="size-l">${esc(s.label)}</span> <strong>${esc(s.price)}</strong></span>`).join('')}</p>` : '';
   return `<section class="cat reveal" id="${c.id}" aria-labelledby="${c.id}-h">
     <header class="cat-head">
-      <h3 id="${c.id}-h">${esc(c.title)}${c.titleTags ? ` ${tags(c.titleTags)}` : ''}</h3>
+      <h2 id="${c.id}-h">${esc(c.title)}${c.titleTags ? ` ${tags(c.titleTags)}` : ''}</h2>
       ${c.subtitle ? `<p class="cat-sub">${esc(c.subtitle)}</p>` : ''}
       ${sizes}
       ${c.intro ? `<p class="cat-intro">${esc(c.intro)}</p>` : ''}
