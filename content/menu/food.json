@@ -1,0 +1,369 @@
+{
+  "id": "food",
+  "title": "Food",
+  "legend": [
+    {
+      "code": "V",
+      "label": "Vegetarian"
+    },
+    {
+      "code": "GF",
+      "label": "Gluten Free"
+    },
+    {
+      "code": "GFO",
+      "label": "Gluten Free Option Available"
+    }
+  ],
+  "categories": [
+    {
+      "id": "starters",
+      "title": "Starters",
+      "items": [
+        {
+          "name": "Pretzel",
+          "description": "Smoked salted German bread",
+          "price": "$6.50"
+        },
+        {
+          "name": "Curry Wurst",
+          "tags": [
+            "GF"
+          ],
+          "description": "Cheese Kransky, chips with curry sauce",
+          "price": "$15.90"
+        },
+        {
+          "name": "Mia’s Hotdog",
+          "description": "Cheese Kransky, Sauerkraut with curry sauce and German mustard in a bun served with chips",
+          "price": "$15.50"
+        },
+        {
+          "name": "Leberkäse",
+          "description": "Rich, compact meatloaf made from finely ground pork served with mash potato and gravy",
+          "price": "$15.90"
+        },
+        {
+          "name": "Kassler with Sauerkraut",
+          "tags": [
+            "GF"
+          ],
+          "description": "Sliced smoked pork served with Sauerkraut",
+          "price": "$21.90"
+        },
+        {
+          "name": "German Weisswurst",
+          "tags": [
+            "GFO"
+          ],
+          "description": "White pork sausage served with sauerkraut and smoked salted German bread",
+          "price": "$21.90"
+        },
+        {
+          "name": "Crumbed Camembert",
+          "tags": [
+            "V"
+          ],
+          "description": "Fried camembert with berry compote, strawberries, blueberries and crackers for dipping",
+          "price": "$17.90"
+        },
+        {
+          "name": "Smokey BBQ Chicken Wings",
+          "tags": [
+            "GF"
+          ],
+          "price": "$14.90"
+        },
+        {
+          "name": "Crumbed Calamari Rings",
+          "price": "$15.90"
+        },
+        {
+          "name": "Crumbed Mushrooms",
+          "tags": [
+            "V"
+          ],
+          "price": "$14.90"
+        },
+        {
+          "name": "Hot Chips (large)",
+          "price": "$10.50"
+        },
+        {
+          "name": "Sweet Potato Chips (large)",
+          "tags": [
+            "GF"
+          ],
+          "price": "$11.90"
+        },
+        {
+          "name": "Mashed Potato",
+          "tags": [
+            "GF"
+          ],
+          "price": "$9.50"
+        },
+        {
+          "name": "Sauerkraut",
+          "tags": [
+            "GF"
+          ],
+          "description": "Finely cut fermented cabbage",
+          "price": "$9.50"
+        },
+        {
+          "name": "Garden Salad",
+          "tags": [
+            "GF"
+          ],
+          "description": "Mix of green leaved, cherry tomatoes, Cucumber and red onion",
+          "price": "$9.50"
+        }
+      ]
+    },
+    {
+      "id": "mains",
+      "title": "Mains",
+      "items": [
+        {
+          "name": "Pork Knuckle",
+          "tags": [
+            "GF"
+          ],
+          "featured": true,
+          "description": "Pork Knuckle served with creamy mash potato, gravy and sauerkraut",
+          "price": "$44.90"
+        },
+        {
+          "name": "Veal Schnitzel",
+          "tags": [
+            "GFO"
+          ],
+          "description": "Freshly crumbed Veal rump served with chips and garden salad",
+          "sizes": [
+            {
+              "label": "Regular (1 piece)",
+              "price": "$29.90"
+            },
+            {
+              "label": "Large (2 pieces)",
+              "price": "$38.90"
+            }
+          ]
+        },
+        {
+          "name": "Pork Schnitzel",
+          "tags": [
+            "GFO"
+          ],
+          "description": "Freshly crumbed pork fillet served with chips and garden salad",
+          "price": "$37.90"
+        },
+        {
+          "name": "Chicken Schnitzel",
+          "tags": [
+            "GFO"
+          ],
+          "description": "Freshly crumbed chicken breast served with chips and garden salad",
+          "sizes": [
+            {
+              "label": "Regular (1 piece)",
+              "price": "$25.90"
+            },
+            {
+              "label": "Large (2 pieces)",
+              "price": "$33.90"
+            }
+          ]
+        },
+        {
+          "name": "Mia's Sausage Platter",
+          "tags": [
+            "GF"
+          ],
+          "description": "A selection of traditional German sausages served with creamy mash potato, gravy and sauerkraut",
+          "price": "$37.90"
+        },
+        {
+          "name": "Lamb Shoulder",
+          "tags": [
+            "GF"
+          ],
+          "serves": "2-3 people",
+          "description": "Slow cooked Lamb shoulder with Sweet Potato Chips, Garden Salad and Gravy",
+          "price": "$99.00"
+        },
+        {
+          "name": "Mia’s Bavarian Platter",
+          "tags": [
+            "GFO"
+          ],
+          "serves": "3-4 people",
+          "featured": true,
+          "description": "Pork Knuckle, selection of traditional German sausages, chicken schnitzel, leberkäse, creamy mash potato, gravy, Sauerkraut, garden salad and chips",
+          "price": "$119.00"
+        },
+        {
+          "name": "Mia’s Barbecue Platter",
+          "tags": [
+            "GF"
+          ],
+          "serves": "2-3 people",
+          "description": "Smoked BBQ pork ribs, BBQ chicken wings, Pulled pork, selection of traditional German sausages, served with coleslaw, pickles and chips",
+          "price": "$99.00"
+        },
+        {
+          "name": "Pork Baby-back Ribs (half)",
+          "tags": [
+            "GF"
+          ],
+          "description": "Smoked BBQ pork ribs served with chips",
+          "note": "Ask for spicy options",
+          "price": "$33.50"
+        },
+        {
+          "name": "Pork Baby-back Ribs (full)",
+          "tags": [
+            "GF"
+          ],
+          "description": "Smoked BBQ pork ribs served with chips",
+          "note": "Ask for spicy options",
+          "price": "$54.90"
+        },
+        {
+          "name": "Fish, Calamari and Chips",
+          "description": "Beer battered flathead and hand-cut calamari rings served with chips and garden salad",
+          "price": "$28.90"
+        },
+        {
+          "name": "Mediterranean Salad",
+          "tags": [
+            "V"
+          ],
+          "description": "Lebanese Eggplant, Kalamata olives, grilled Halloumi cheese, Chargrilled capsicum, Cherry tomatoes, Mixed salad leaves and balsamic vinegar",
+          "price": "$27.90"
+        },
+        {
+          "name": "Caesar Salad",
+          "description": "Mixed salad leaves, bacon, boiled eggs, Parmesan cheese, croutons, tossed in traditional Caesar dressing, served with chicken or prawns",
+          "price": "$27.90"
+        },
+        {
+          "name": "Bucket of Smokey BBQ Chicken Wings",
+          "note": "Ask for spicy options",
+          "price": "$21.90"
+        }
+      ],
+      "image": "bavarian-platter"
+    },
+    {
+      "id": "burgers",
+      "title": "Burgers",
+      "titleTags": [
+        "GFO"
+      ],
+      "items": [
+        {
+          "name": "Cheese Burger",
+          "description": "Beef patty, aged Cheddar cheese, lettuce, pickles, aioli",
+          "price": "$18.90"
+        },
+        {
+          "name": "Classic Beef Burger",
+          "description": "Beef patty, coleslaw, onions, tomato, mixed leaves, cheddar cheese, Aioli",
+          "price": "$21.90"
+        },
+        {
+          "name": "Leberkäse Burger",
+          "description": "Leberkäse, fried egg, cheese, coleslaw, curry sauce.",
+          "price": "$21.90"
+        },
+        {
+          "name": "Pulled pork Burger",
+          "description": "Pulled pork, coleslaw, BBQ sauce",
+          "price": "$21.90"
+        },
+        {
+          "name": "Chicken Burger",
+          "description": "Chicken, mushrooms, onions, Cheddar cheese, aioli",
+          "price": "$19.50"
+        },
+        {
+          "name": "Chicken Schnitzel Burger",
+          "description": "Chicken schnitzel, lettuce, tomato, Aioli",
+          "price": "$19.90"
+        },
+        {
+          "name": "Ocean Burger",
+          "description": "Beer battered flathead , grilled prawns, calamari rings, rocket, chilli lime aioli",
+          "price": "$21.90"
+        },
+        {
+          "name": "Meat free Burger",
+          "tags": [
+            "V"
+          ],
+          "description": "Haloumi cheese, pickled cucumber and mixed salad, aioli and balsamic glaze",
+          "price": "$19.90"
+        }
+      ],
+      "image": "seafood-burger"
+    },
+    {
+      "id": "burger-add-ons",
+      "title": "Burger Add Ons",
+      "items": [
+        {
+          "name": "Beef patty",
+          "price": "$7.00"
+        },
+        {
+          "name": "Bacon",
+          "price": "$4.00"
+        },
+        {
+          "name": "Fried Egg",
+          "price": "$3.00"
+        },
+        {
+          "name": "Grilled chicken",
+          "price": "$6.00"
+        },
+        {
+          "name": "Chips",
+          "price": "$4.50"
+        },
+        {
+          "name": "Sweet Potato chips",
+          "price": "$5.50"
+        },
+        {
+          "name": "Gluten-Free Bun",
+          "price": "$3.00"
+        }
+      ]
+    },
+    {
+      "id": "kids-menu",
+      "title": "Kid’s Menu",
+      "items": [
+        {
+          "name": "Fish & Chips + Juice",
+          "price": "$13.90"
+        },
+        {
+          "name": "Cheese Burger + Chips + Juice",
+          "price": "$13.90"
+        },
+        {
+          "name": "Chicken Nuggets + Chips + Juice",
+          "price": "$13.90"
+        },
+        {
+          "name": "Chicken Schnitzel + Chips + Juice",
+          "price": "$13.90"
+        }
+      ]
+    }
+  ]
+}

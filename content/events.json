@@ -1,0 +1,9 @@
+{
+  "heading": "Weekly Events – What’s On at Mia’s?",
+  "items": [
+    { "day": "Tuesday", "dayIndex": 2, "title": "Chicken Schnitzel Burger & Chips", "price": "$15" },
+    { "day": "Wednesday", "dayIndex": 3, "title": "Large Chicken Schnitzel Meal (2pcs with Chips)", "price": "$25" },
+    { "day": "Thursday", "dayIndex": 4, "title": "All you can eat BBQ Chicken Wings", "price": "$20" },
+    { "day": "Friday", "dayIndex": 5, "title": "All Fruit Tingles 40% Off", "price": "$12" }
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "id": "drinks",
+  "title": "Drinks",
+  "legend": [],
+  "categories": [
+    {
+      "id": "draft-beer",
+      "title": "Deutsches Bier vom Fass",
+      "subtitle": "German Draft Beer",
+      "sizes": [
+        {
+          "label": "300ml",
+          "price": "$12"
+        },
+        {
+          "label": "500ml",
+          "price": "$17"
+        },
+        {
+          "label": "1L",
+          "price": "$29"
+        }
+      ],
+      "intro": "Please ask our friendly staff or check the blackboard for our current selection. We are rotating our beers for a better beer experience all the time .",
+      "items": [
+        {
+          "name": "Beer Tasting Paddle",
+          "serves": "5x 300ml",
+          "price": "$50"
+        },
+        {
+          "name": "Weissbier",
+          "description": "The aroma and flavour of a Weissbier is decidedly fruity and they are very cloudy. These beers are made with at least 50 percent malted wheat, and the hop rates are quite low."
+        },
+        {
+          "name": "Lager",
+          "description": "Lager beers use a process of cool fermentation, followed by maturation in cold storage. It's got a little herbal bitterness and a slight floral aroma from the hops, as well as pleasantly balanced malty cereal flavours."
+        },
+        {
+          "name": "Helles",
+          "description": "A beer for beer lovers. The German-style Helles is a malty pale lager, light bodied and top fermented that balances a pleasant malt sweetness and body with floral noble hops and restrained bitterness."
+        },
+        {
+          "name": "Pilsner",
+          "description": "German Pilsner is a light-bodied and highly attenuated lager beer brewed from 100% barley malt and generally defined as a golden-coloured bottom fermented bitter beer showing excellent head retention and a floral hop aroma."
+        },
+        {
+          "name": "Dunkel",
+          "serves": "Seasonal",
+          "description": "This is basically a mild, dark lager beer that is malt forward and gently hopped. It's a very smooth and perfect balanced lager with all the flavours of a dark beer."
+        }
+      ],
+      "image": "tap-tower"
+    },
+    {
+      "id": "fruit-beer",
+      "title": "Fruit Beer",
+      "sizes": [
+        {
+          "label": "300ml",
+          "price": "$12"
+        },
+        {
+          "label": "500ml",
+          "price": "$17"
+        },
+        {
+          "label": "1L",
+          "price": "$29"
+        }
+      ],
+      "items": [
+        {
+          "name": "Mango / Banana / Passionfruit / Lychee / Peach / Diesel (Lager & Cola) / Radler-Shandy"
+        }
+      ]
+    },
+    {
+      "id": "bottled-beer-cider",
+      "title": "Bottled Beer & Cider",
+      "items": [
+        {
+          "name": "Schnitzer Bräu (gluten free)",
+          "serves": "5% 330ml",
+          "price": "$10"
+        },
+        {
+          "name": "Corona",
+          "serves": "4.5% 355ml",
+          "price": "$10"
+        },
+        {
+          "name": "Pure Blonde Premium",
+          "serves": "4.2% 355ml",
+          "price": "$10"
+        },
+        {
+          "name": "Somersby Apple Cider",
+          "serves": "4.5% 375ml",
+          "price": "$10"
+        },
+        {
+          "name": "Somersby Pear Cider",
+          "serves": "4.5% 375ml",
+          "price": "$10"
+        }
+      ]
+    },
+    {
+      "id": "low-no-alcohol",
+      "title": "Low/No Alcohol Bottled Beer",
+      "items": [
+        {
+          "name": "Erdinger Weissbier Alcoholfree",
+          "serves": "0.4% 330ml",
+          "price": "$9"
+        },
+        {
+          "name": "Clausthaler Lager Alcoholfree",
+          "serves": "0% 330ml",
+          "price": "$9"
+        }
+      ]
+    },
+    {
+      "id": "schnapps",
+      "title": "Schnapps",
+      "items": [
+        {
+          "name": "Sauer Apple Schnapps",
+          "price": "$9"
+        },
+        {
+          "name": "Peach Schnapps",
+          "price": "$9"
+        },
+        {
+          "name": "Kleiner Feigling",
+          "price": "$9"
+        },
+        {
+          "name": "Bärenjäger Honey",
+          "price": "$9"
+        },
+        {
+          "name": "Goldwasser",
+          "price": "$10"
+        },
+        {
+          "name": "Glacier Ice",
+          "price": "$10"
+        },
+        {
+          "name": "Bergfeuer",
+          "price": "$10"
+        },
+        {
+          "name": "Jägermeister",
+          "price": "$10"
+        },
+        {
+          "name": "Obstler",
+          "price": "$10"
+        },
+        {
+          "name": "Doppelkorn",
+          "price": "$10"
+        },
+        {
+          "name": "Friesengeist",
+          "price": "$10"
+        },
+        {
+          "name": "Schnapps Paddle",
+          "serves": "x12",
+          "price": "$89"
+        }
+      ]
+    },
+    {
+      "id": "cocktails",
+      "title": "Cocktails",
+      "items": [
+        {
+          "name": "Mim’s Mojito",
+          "description": "Rum, Mint, Sugar, Lime, Soda",
+          "price": "$20"
+        },
+        {
+          "name": "Espresso Martini",
+          "description": "Vodka, Kahlua, Espresso",
+          "price": "$20"
+        },
+        {
+          "name": "Fruit Tingle",
+          "description": "Vodka, Blue Curacao, Lemonade, Raspberry Cordial",
+          "price": "$20"
+        },
+        {
+          "name": "Long Island Ice Tea",
+          "description": "White Rum, Vodka, Gin, Tequila, Cointreau, Coke",
+          "price": "$22"
+        },
+        {
+          "name": "Apple Martini",
+          "description": "Vanilla Vodka, Sour Apple Schnapps, Lime, Green Apple",
+          "price": "$20"
+        },
+        {
+          "name": "BJ Shot",
+          "description": "Coffee Liqueur, Chocolate Liqueur, Cream",
+          "price": "$10"
+        }
+      ]
+    },
+    {
+      "id": "spirits",
+      "title": "Spirits",
+      "items": [
+        {
+          "name": "All spirits/mix",
+          "price": "$12"
+        },
+        {
+          "name": "Extra Shot",
+          "price": "$6"
+        }
+      ],
+      "list": [
+        "Bombay Sapphire",
+        "Malibu",
+        "Midori",
+        "Bacardi",
+        "Ballantine’s",
+        "Johnnie Walker",
+        "Kraken Spiced",
+        "Bundaberg",
+        "Jack Daniels",
+        "Wild Turkey",
+        "Jim Bean",
+        "Smirnoff Vodka"
+      ],
+      "afterItems": [
+        {
+          "name": "Premium Spirits",
+          "description": "Please check with our friendly staff for our current collection",
+          "price": "$17"
+        }
+      ]
+    },
+    {
+      "id": "soft-drinks",
+      "title": "Softdrinks",
+      "items": [
+        {
+          "name": "Coke",
+          "price": "$4.90"
+        },
+        {
+          "name": "Coke No Sugar",
+          "price": "$4.90"
+        },
+        {
+          "name": "Solo",
+          "price": "$4.90"
+        },
+        {
+          "name": "Diet Coke",
+          "price": "$4.90"
+        },
+        {
+          "name": "Fanta",
+          "price": "$4.90"
+        },
+        {
+          "name": "Lemonade",
+          "price": "$4.90"
+        },
+        {
+          "name": "Sprite",
+          "price": "$4.90"
+        },
+        {
+          "name": "Lemon Lime Bitters",
+          "price": "$5.50"
+        },
+        {
+          "name": "Pink Lemonade",
+          "price": "$5.50"
+        },
+        {
+          "name": "Sparkling Water",
+          "price": "$4.50"
+        }
+      ]
+    }
+  ]
+}

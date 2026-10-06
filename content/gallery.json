@@ -1,0 +1,21 @@
+{
+  "images": [
+    { "slug": "crowd-bavarian-flag", "w": 1200, "h": 900, "widths": [480, 800, 1200], "alt": "A big group of friends posing together inside the beerhall beneath a Bavarian flag", "caption": "Good company under the Bavarian flag" },
+    { "slug": "bavarian-platter", "w": 1200, "h": 800, "widths": [480, 800, 1200], "alt": "A heaped platter of German specialties with roast chicken, sausages, sauerkraut and salad", "caption": "Platter of German specialties" },
+    { "slug": "tap-tower", "w": 800, "h": 818, "widths": [480, 800], "alt": "Ornate blue ceramic beer tap tower with a row of German beer badges above the bar", "caption": "Imported German & Austrian beer on tap" },
+    { "slug": "toast-long-table", "w": 600, "h": 800, "widths": [480, 600], "alt": "Guests raising steins along a long communal table covered in blue and white Bavarian diamond cloth", "caption": "Prost! Long communal tables" },
+    { "slug": "schnitzel-burger-stein", "w": 720, "h": 960, "widths": [480, 720], "alt": "Chicken schnitzel burger with a pink cocktail and a one litre stein of beer", "caption": "Chicken Schnitzel Burger, cocktail and a stein" },
+    { "slug": "sausage-platter", "w": 1200, "h": 800, "widths": [480, 800, 1200], "alt": "Plate of traditional German sausages with mash, gravy and sauerkraut", "caption": "Sausages with mash, gravy & sauerkraut" },
+    { "slug": "chalk-eternal-fame", "w": 1200, "h": 800, "widths": [480, 800, 1200], "alt": "Chalkboard challenge: hold 1 litre of beer straight-armed for 5 minutes for eternal fame and a free litre", "caption": "The chalkboard challenge" },
+    { "slug": "bartender-tap", "w": 1200, "h": 800, "widths": [480, 800, 1200], "alt": "Bartender pouring a beer from the tap tower in front of a wall of spirits", "caption": "Pouring at the bar" },
+    { "slug": "seafood-burger", "w": 1200, "h": 1200, "widths": [480, 800, 1200], "alt": "Tall burger stacked with crumbed seafood, rocket and sauce on a timber table", "caption": "Burgers, stacked high" },
+    { "slug": "litre-steins-group", "w": 720, "h": 960, "widths": [480, 720], "alt": "Friends smiling around a table with litre steins of beer", "caption": "Litre steins with friends" },
+    { "slug": "bbq-platter", "w": 1200, "h": 800, "widths": [480, 800, 1200], "alt": "Barbecue platter of smoked pork ribs, chicken wings, pulled pork, sausages and chips", "caption": "Smoked ribs, wings & sausages" },
+    { "slug": "hall-patrons", "w": 1200, "h": 800, "widths": [480, 800, 1200], "alt": "Patrons gathered inside the brick-walled beerhall on a busy night", "caption": "A busy night in the hall" },
+    { "slug": "schnitzel-plate", "w": 1200, "h": 800, "widths": [480, 800, 1200], "alt": "Golden crumbed schnitzel with lemon, chips and garden salad", "caption": "Freshly crumbed schnitzel" },
+    { "slug": "pulled-pork-burger", "w": 1200, "h": 1200, "widths": [480, 800, 1200], "alt": "Pulled pork burger with coleslaw and BBQ sauce", "caption": "Pulled pork burger" },
+    { "slug": "halloumi-salad", "w": 1200, "h": 800, "widths": [480, 800, 1200], "alt": "Salad of grilled halloumi, olives, cherry tomatoes and mixed leaves", "caption": "Mediterranean salad with grilled halloumi" },
+    { "slug": "beef-burger", "w": 1200, "h": 1200, "widths": [480, 800, 1200], "alt": "Beef burger with lettuce and aioli on a plate on a timber table", "caption": "Classic beef burger" },
+    { "slug": "chalk-bad-beer", "w": 1200, "h": 800, "widths": [480, 800, 1200], "alt": "Chalkboard on the wall reading Life is too short to drink bad beer, with a drawing of a beer stein", "caption": "Life is too short to drink bad beer" }
+  ]
+}

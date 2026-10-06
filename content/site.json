@@ -1,0 +1,25 @@
+{
+  "name": "Mia's Cronulla German Beerhall",
+  "shortName": "Mia's Cronulla",
+  "url": "https://www.miasbar.com.au",
+  "tagline": "Hidden gem in Cronulla",
+  "description": "German beerhall, bar & restaurant on Gerrale Street, Cronulla. Imported German & Austrian beers on tap, pork knuckle, schnitzels, the famous Bavarian Platter and more.",
+  "phone": "0400 004 073",
+  "phoneIntl": "+61400004073",
+  "email": "johnpeters@miasbar.com.au",
+  "address": {
+    "line1": "2/45 Gerrale St",
+    "suburb": "Cronulla",
+    "state": "NSW",
+    "postcode": "2230",
+    "country": "AU"
+  },
+  "geo": { "lat": -34.0549938, "lng": 151.1529278 },
+  "social": {
+    "facebook": "https://www.facebook.com/miascronulla/",
+    "instagram": "https://www.instagram.com/miascronulla/",
+    "googleMaps": "https://maps.google.com/?cid=6049923584808118084"
+  },
+  "bookingNote": "For bookings with less than 24 hours notice, please call 0400 004 073",
+  "visitCta": "Visit us, or call to reserve a table!"
+}

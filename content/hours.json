@@ -1,0 +1,8 @@
+{
+  "timezone": "Australia/Sydney",
+  "groups": [
+    { "label": "Monday", "days": [1], "closed": true },
+    { "label": "Tuesday – Friday", "days": [2, 3, 4, 5], "open": "17:00", "close": "23:00", "display": "5pm – 11pm" },
+    { "label": "Weekends", "days": [6, 0], "open": "11:00", "close": "23:00", "display": "11am – 11pm" }
+  ]
+}
