@@ -17,8 +17,8 @@ load_config_file: false
 publish_mode: simple
 media_folder: public/img/uploads
 public_folder: /img/uploads
-site_url: https://www.miasbar.com.au
-display_url: https://www.miasbar.com.au
+site_url: https://miascronulla.github.io
+display_url: https://miascronulla.github.io
 
 collections:
   - name: menu
