@@ -15,8 +15,9 @@ backend:
     deleteMedia: "CMS: delete “{{path}}”"
 load_config_file: false
 publish_mode: simple
-media_folder: public/img/uploads
-public_folder: /img/uploads
+# The Media tab browses all site photos (including the built-in ones).
+media_folder: public/img
+public_folder: /img
 site_url: https://mias-cronulla.pages.dev
 display_url: https://mias-cronulla.pages.dev
 
@@ -148,7 +149,7 @@ collections:
             hint: "Existing photos keep their built-in file name. To add a new photo, choose 'Uploaded photo' (JPG/WebP, ideally ≤ 1600px wide)."
             fields:
               - { label: "Built-in photo name (leave blank for new photos)", name: slug, widget: string, required: false }
-              - { label: "Uploaded photo", name: image, widget: image, required: false }
+              - { label: "Uploaded photo", name: image, widget: image, required: false, media_folder: "/public/img/uploads", public_folder: "/img/uploads" }
               - { label: "Short caption", name: caption, widget: string }
               - { label: "Description for screen readers (alt text)", name: alt, widget: string }
               - { label: "Width (built-in photos only)", name: w, widget: number, required: false }
