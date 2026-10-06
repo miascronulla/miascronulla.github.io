@@ -3,10 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<!-- Locked-down policy: only this site's own files plus GitHub (data) and the login helper. Nothing is loaded from a CDN. 'unsafe-eval' is required by the CMS schema validator (ajv) and applies to this page only. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-eval' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://avatars.githubusercontent.com https://*.githubusercontent.com; font-src 'self' data:; connect-src 'self' https://api.github.com https://*.workers.dev; frame-src 'self' blob:; worker-src 'self' blob:; form-action 'none'; base-uri 'none'; object-src 'none'">
+<link rel="icon" href="../img/favicon-32.png" sizes="32x32" type="image/png">
 <title>Mia's – Content Manager</title>
 </head>
 <body>
-<script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+<!-- Decap CMS 3.16.3 (MIT) – vendored in /admin/vendor/decap-cms so no third-party script runs on the admin page. -->
+<script src="vendor/decap-cms/decap-cms.js"></script>
 </body>
 </html>

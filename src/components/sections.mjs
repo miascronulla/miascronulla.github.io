@@ -1,4 +1,4 @@
-import { esc, url, content, fmtAddress } from '../lib.mjs';
+import { esc, url, content, fmtAddress, safeJson } from '../lib.mjs';
 import { icons } from './icons.mjs';
 import { img } from './image.mjs';
 import { hoursList, mapsDir } from './layout.mjs';
@@ -12,7 +12,7 @@ export const lozenge = '<div class="lozenge-band" aria-hidden="true"></div>';
 
 export function statusChip() {
   return `<p class="status" data-open-status><span class="dot" aria-hidden="true"></span><span data-open-text>See opening hours below</span></p>
-<script type="application/json" id="hours-data">${JSON.stringify(hours)}</script>`;
+<script type="application/json" id="hours-data">${safeJson(hours)}</script>`;
 }
 
 export function specials({ dark = true } = {}) {

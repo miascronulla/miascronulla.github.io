@@ -6,6 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "node build.mjs",
+    "validate": "node scripts/validate-content.mjs",
+    "build:local": "node build.mjs --local",
     "dev": "node build.mjs && node scripts/serve.mjs",
     "images": "python3 scripts/optimise-images.py ./originals"
   },

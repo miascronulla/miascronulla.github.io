@@ -7,6 +7,9 @@ import { join } from 'node:path';
 import { ROOT, BASE, LOCAL, ROOT_TOKEN, absUrl, content, url } from './src/lib.mjs';
 import { home, menuPage, galleryPage, visitPage, notFound } from './src/pages.mjs';
 
+import { execFileSync } from 'node:child_process';
+try { execFileSync(process.execPath, [join(ROOT, 'scripts/validate-content.mjs')], { stdio: 'inherit' }); } catch { process.exit(1); }   // stop the build on bad content
+
 const OUT = join(ROOT, LOCAL ? 'dist-local' : 'dist');
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });

@@ -1,7 +1,18 @@
-import { esc, url, absUrl, content, fmtAddress, fmtTime, LOCAL } from '../lib.mjs';
+import { createHash } from 'node:crypto';
+import { esc, url, absUrl, content, fmtAddress, fmtTime, LOCAL, safeJson } from '../lib.mjs';
 import { icons } from './icons.mjs';
 
 const { site, hours, promotions } = content;
+const BOOT = "document.documentElement.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('anim')";
+const bootHash = createHash('sha256').update(BOOT).digest('base64');
+let endpointOrigin = '';
+try { endpointOrigin = site.formEndpoint ? new URL(site.formEndpoint).origin : ''; } catch {}
+// Content-Security-Policy (GitHub Pages can't send headers, so it is delivered via <meta>). Skipped for the file:// build.
+const CSP = [
+  "default-src 'self'", `script-src 'self' 'sha256-${bootHash}'`, "style-src 'self'", "img-src 'self' data:", "font-src 'self'",
+  `connect-src 'self'${endpointOrigin ? ' ' + endpointOrigin : ''}`, "frame-src https://www.google.com https://maps.google.com", "object-src 'none'", "base-uri 'none'", "form-action 'self' mailto:",
+].join('; ');
+
 const NAV = [
   { href: '', label: 'Home', key: 'home' },
   { href: 'menu/', label: 'Menu', key: 'menu' },
@@ -17,6 +28,8 @@ function head({ title, description, path, key, image = 'img/og-image.jpg', jsonl
   return `<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+${LOCAL ? '' : `<meta http-equiv="Content-Security-Policy" content="${CSP}">`}
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${canonical}">
@@ -38,8 +51,8 @@ ${noindex ? '<meta name="robots" content="noindex">' : ''}
 ${LOCAL ? '' : `<link rel="preload" href="${url('fonts/fraunces-latin-wght-normal.woff2')}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="${url('fonts/inter-latin-wght-normal.woff2')}" as="font" type="font/woff2" crossorigin>`}
 <link rel="stylesheet" href="${url('assets/main.css')}">
-<script>document.documentElement.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('anim')</script>
-${jsonld.map((j) => `<script type="application/ld+json">${JSON.stringify(j)}</script>`).join('\n')}
+<script>${BOOT}</script>
+${jsonld.map((j) => `<script type="application/ld+json">${safeJson(j)}</script>`).join('\n')}
 </head>`;
 }
 

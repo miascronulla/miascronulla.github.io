@@ -13,10 +13,13 @@ jobs:
         with: { node-version: 22 }
       - uses: actions/configure-pages@v5
         id: pages
-      # Project sites live at /<repo>/ ; with a custom domain (CNAME file) the base is "/".
+      - name: Validate content (fails the deploy if a price/hour/link is malformed)
+        run: node scripts/validate-content.mjs
+      # <user>.github.io repos and custom domains (CNAME file) are served from "/"; other project sites from /<repo>/.
       - name: Build
         run: |
-          if [ -f CNAME ]; then export BASE_PATH=/; else export BASE_PATH="/${GITHUB_REPOSITORY#*/}/"; fi
+          REPO="${GITHUB_REPOSITORY#*/}"
+          if [ -f CNAME ] || [[ "$REPO" == *.github.io ]]; then export BASE_PATH=/; else export BASE_PATH="/$REPO/"; fi
           node build.mjs
       - uses: actions/upload-pages-artifact@v3
         with: { path: dist }
