@@ -6,7 +6,7 @@ backend:
   name: github
   repo: miascronulla/miascronulla.github.io
   branch: main
-  # base_url: https://YOUR-OAUTH-PROXY.workers.dev   # <-- REQUIRED for login on GitHub Pages: see README "Turning on the CMS"
+  base_url: https://mias-cronulla.pages.dev
   commit_messages:
     create: "CMS: add {{collection}} “{{slug}}”"
     update: "CMS: update {{collection}} “{{slug}}”"
@@ -17,8 +17,8 @@ load_config_file: false
 publish_mode: simple
 media_folder: public/img/uploads
 public_folder: /img/uploads
-site_url: https://miascronulla.github.io
-display_url: https://miascronulla.github.io
+site_url: https://mias-cronulla.pages.dev
+display_url: https://mias-cronulla.pages.dev
 
 collections:
   - name: menu
