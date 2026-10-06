@@ -1,0 +1,190 @@
+# Decap CMS configuration – a simple admin screen at /admin/ for non-technical staff.
+# Edits are saved as commits to the GitHub repo, which re-publishes the site automatically.
+# SETUP: see README.md "Turning on the CMS" (needs GitHub login via an OAuth proxy or Netlify Identity).
+backend:
+  name: github
+  repo: YOUR-GITHUB-USER/mias-cronulla   # <-- change to your repo
+  branch: main
+  # base_url: https://your-oauth-proxy.example.com   # <-- needed for GitHub Pages hosting
+local_backend: true            # lets a developer test with `npx decap-server`
+publish_mode: simple
+media_folder: public/img/uploads
+public_folder: /img/uploads
+site_url: https://www.miasbar.com.au
+display_url: https://www.miasbar.com.au
+
+collections:
+  - name: menu
+    label: "Menu & prices"
+    files:
+      - name: food
+        label: "Food menu"
+        file: content/menu/food.json
+        fields: &menu_fields
+          - { label: "Menu id (leave as is)", name: id, widget: hidden }
+          - { label: "Menu title", name: title, widget: hidden }
+          - label: "Dietary key"
+            name: legend
+            widget: list
+            required: false
+            fields:
+              - { label: Code, name: code, widget: string }
+              - { label: Meaning, name: label, widget: string }
+          - label: "Categories"
+            name: categories
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Category id (no spaces, e.g. mains)", name: id, widget: string }
+              - { label: "Category title", name: title, widget: string }
+              - { label: "Subtitle", name: subtitle, widget: string, required: false }
+              - { label: "Intro text", name: intro, widget: text, required: false }
+              - { label: "Photo (optional, built-in photo name)", name: image, widget: string, required: false }
+              - { label: "Category tags (e.g. GFO)", name: titleTags, widget: list, required: false, field: { label: Tag, name: tag, widget: string } }
+              - label: "Category-wide sizes & prices (e.g. 300ml / 500ml / 1L)"
+                name: sizes
+                required: false
+                widget: list
+                fields:
+                  - { label: Size, name: label, widget: string }
+                  - { label: Price (e.g. $12), name: price, widget: string }
+              - label: "Items"
+                name: items
+                widget: list
+                summary: "{{fields.name}} {{fields.price}}"
+                fields:
+                  - { label: Name, name: name, widget: string }
+                  - { label: Description, name: description, widget: text, required: false }
+                  - { label: "Price (e.g. $24.90)", name: price, widget: string, required: false }
+                  - label: "Several sizes/prices (use instead of Price)"
+                    name: sizes
+                    required: false
+                    widget: list
+                    fields:
+                      - { label: Size, name: label, widget: string }
+                      - { label: Price, name: price, widget: string }
+                  - { label: "Serves / extra info (e.g. 2-3 people)", name: serves, widget: string, required: false }
+                  - { label: "Dietary tags", name: tags, widget: select, multiple: true, required: false, options: ["V", "GF", "GFO"] }
+                  - { label: "Note (e.g. Ask for spicy options)", name: note, widget: string, required: false }
+                  - { label: "Highlight as signature dish", name: featured, widget: boolean, default: false, required: false }
+              - { label: "Plain list of names (e.g. spirit brands)", name: list, widget: list, required: false, field: { label: Name, name: n, widget: string } }
+      - name: drinks
+        label: "Drinks menu"
+        file: content/menu/drinks.json
+        fields: *menu_fields
+
+  - name: hours
+    label: "Opening hours"
+    files:
+      - name: hours
+        label: "Opening hours"
+        file: content/hours.json
+        fields:
+          - { label: Timezone, name: timezone, widget: hidden, default: "Australia/Sydney" }
+          - label: "Opening hour groups"
+            name: groups
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { label: "Label shown (e.g. Tuesday – Friday)", name: label, widget: string }
+              - { label: "Days (0 = Sunday … 6 = Saturday)", name: days, widget: list, field: { label: Day, name: d, widget: number, value_type: int, min: 0, max: 6 } }
+              - { label: "Closed all day?", name: closed, widget: boolean, required: false, default: false }
+              - { label: "Opens (24h, e.g. 17:00)", name: open, widget: string, required: false }
+              - { label: "Closes (24h, e.g. 23:00)", name: close, widget: string, required: false }
+              - { label: "Text to display (e.g. 5pm – 11pm)", name: display, widget: string, required: false }
+
+  - name: events
+    label: "Weekly specials & events"
+    files:
+      - name: events
+        label: "What's On"
+        file: content/events.json
+        fields:
+          - { label: Heading, name: heading, widget: string }
+          - label: "Specials"
+            name: items
+            widget: list
+            summary: "{{fields.day}}: {{fields.title}}"
+            fields:
+              - { label: "Day name", name: day, widget: string }
+              - { label: "Day number (0 = Sunday … 6 = Saturday)", name: dayIndex, widget: number, value_type: int, min: 0, max: 6 }
+              - { label: "What's on", name: title, widget: string }
+              - { label: Price, name: price, widget: string }
+
+  - name: promotions
+    label: "Promotion banner"
+    files:
+      - name: promotions
+        label: "Banner across the top of every page"
+        file: content/promotions.json
+        fields:
+          - label: Banner
+            name: banner
+            widget: object
+            fields:
+              - { label: "Show banner", name: active, widget: boolean, default: false }
+              - { label: Text, name: text, widget: string, required: false }
+              - { label: "Link text", name: linkText, widget: string, required: false }
+              - { label: "Link address", name: linkUrl, widget: string, required: false }
+
+  - name: gallery
+    label: "Gallery photos"
+    files:
+      - name: gallery
+        label: "Gallery"
+        file: content/gallery.json
+        fields:
+          - label: Photos
+            name: images
+            widget: list
+            summary: "{{fields.caption}}"
+            hint: "Existing photos keep their built-in file name. To add a new photo, choose 'Uploaded photo' (JPG/WebP, ideally ≤ 1600px wide)."
+            fields:
+              - { label: "Built-in photo name (leave blank for new photos)", name: slug, widget: string, required: false }
+              - { label: "Uploaded photo", name: image, widget: image, required: false }
+              - { label: "Short caption", name: caption, widget: string }
+              - { label: "Description for screen readers (alt text)", name: alt, widget: string }
+              - { label: "Width (built-in photos only)", name: w, widget: number, required: false }
+              - { label: "Height (built-in photos only)", name: h, widget: number, required: false }
+              - { label: "Sizes (built-in photos only)", name: widths, widget: list, required: false, field: { label: Width, name: wd, widget: number } }
+
+  - name: settings
+    label: "Contact & site details"
+    files:
+      - name: site
+        label: "Contact details"
+        file: content/site.json
+        fields:
+          - { label: "Business name", name: name, widget: string }
+          - { label: "Short name", name: shortName, widget: string }
+          - { label: "Website address", name: url, widget: string }
+          - { label: Tagline, name: tagline, widget: string }
+          - { label: "Search/Facebook description", name: description, widget: text }
+          - { label: "Phone (as displayed)", name: phone, widget: string }
+          - { label: "Phone (international, no spaces, e.g. +61400004073)", name: phoneIntl, widget: string }
+          - { label: Email, name: email, widget: string }
+          - { label: "Booking note", name: bookingNote, widget: string }
+          - { label: "Visit call-to-action", name: visitCta, widget: string }
+          - { label: "Contact form endpoint (optional – e.g. Formspree URL)", name: formEndpoint, widget: string, required: false }
+          - label: Address
+            name: address
+            widget: object
+            fields:
+              - { label: "Street", name: line1, widget: string }
+              - { label: Suburb, name: suburb, widget: string }
+              - { label: State, name: state, widget: string }
+              - { label: Postcode, name: postcode, widget: string }
+              - { label: Country, name: country, widget: string }
+          - label: "Map position"
+            name: geo
+            widget: object
+            fields:
+              - { label: Latitude, name: lat, widget: number, value_type: float }
+              - { label: Longitude, name: lng, widget: number, value_type: float }
+          - label: "Social links"
+            name: social
+            widget: object
+            fields:
+              - { label: Facebook, name: facebook, widget: string }
+              - { label: Instagram, name: instagram, widget: string }
+              - { label: "Google Maps", name: googleMaps, widget: string }

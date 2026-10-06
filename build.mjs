@@ -4,14 +4,20 @@
 //   BASE_PATH=/repo/ node build.mjs   (GitHub Pages project site)
 import { mkdirSync, writeFileSync, cpSync, rmSync, existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { ROOT, BASE, absUrl, content, url } from './src/lib.mjs';
+import { ROOT, BASE, LOCAL, ROOT_TOKEN, absUrl, content, url } from './src/lib.mjs';
 import { home, menuPage, galleryPage, visitPage, notFound } from './src/pages.mjs';
 
-const OUT = join(ROOT, 'dist');
+const OUT = join(ROOT, LOCAL ? 'dist-local' : 'dist');
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
 
-const write = (p, data) => { const f = join(OUT, p); mkdirSync(join(f, '..'), { recursive: true }); writeFileSync(f, data); };
+// In --local mode every link is made relative ("../" per folder level) and folder links point at index.html,
+// so the site works when opened straight from disk (file://).
+const localise = (p, data) => {
+  const up = '../'.repeat(p.split('/').length - 1);
+  return data.replace(/@@ROOT@@\/([^"'#\s)]*)/g, (_, path) => up + ((path === '' || path.endsWith('/')) ? path + 'index.html' : path));
+};
+const write = (p, data) => { if (LOCAL && /\.(html|webmanifest)$/.test(p)) data = localise(p, data); const f = join(OUT, p); mkdirSync(join(f, '..'), { recursive: true }); writeFileSync(f, data); };
 
 // Pages
 write('index.html', home());
@@ -23,7 +29,7 @@ write('404.html', notFound());
 // Static assets
 cpSync(join(ROOT, 'public'), OUT, { recursive: true });
 mkdirSync(join(OUT, 'assets'), { recursive: true });
-const css = readFileSync(join(ROOT, 'src/styles/main.css'), 'utf8').replace(/url\(\/fonts\//g, `url(${BASE}fonts/`);
+const css = readFileSync(join(ROOT, 'src/styles/main.css'), 'utf8').replace(/url\(\/fonts\//g, `url(${LOCAL ? '../' : BASE}fonts/`);
 write('assets/main.css', css.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\s*\n\s*/g, '\n'));
 cpSync(join(ROOT, 'src/scripts/main.js'), join(OUT, 'assets/main.js'));
 

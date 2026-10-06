@@ -3,7 +3,9 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 export const ROOT = new URL('..', import.meta.url).pathname;
-export const BASE = (process.env.BASE_PATH || '/').replace(/\/?$/, '/');
+export const LOCAL = process.argv.includes('--local');   // double-clickable build (file://)
+export const ROOT_TOKEN = '@@ROOT@@/';
+export const BASE = LOCAL ? ROOT_TOKEN : (process.env.BASE_PATH || '/').replace(/\/?$/, '/');
 
 export const esc = (s = '') =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -22,7 +24,10 @@ export const content = {
   drinks: read('menu/drinks.json'),
 };
 
-export const absUrl = (p = '') => content.site.url.replace(/\/$/, '') + url(p).replace(/\/$/, p ? '/' : '');
+export const absUrl = (p = '') => {
+  const u = (LOCAL ? '/' : BASE) + p.replace(/^\//, '');
+  return content.site.url.replace(/\/$/, '') + (p ? u : u.replace(/\/$/, ''));
+};
 export const fmtAddress = (a) => `${a.line1}, ${a.suburb} ${a.state} ${a.postcode}`;
 export const priceNum = (s) => (String(s).match(/[\d.]+/) || [''])[0];
 

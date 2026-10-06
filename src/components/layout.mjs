@@ -1,4 +1,4 @@
-import { esc, url, absUrl, content, fmtAddress, fmtTime } from '../lib.mjs';
+import { esc, url, absUrl, content, fmtAddress, fmtTime, LOCAL } from '../lib.mjs';
 import { icons } from './icons.mjs';
 
 const { site, hours, promotions } = content;
@@ -35,8 +35,8 @@ ${noindex ? '<meta name="robots" content="noindex">' : ''}
 <link rel="icon" href="${url('img/favicon-32.png')}" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="${url('img/apple-touch-icon.png')}">
 <link rel="manifest" href="${url('manifest.webmanifest')}">
-<link rel="preload" href="${url('fonts/fraunces-latin-wght-normal.woff2')}" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="${url('fonts/inter-latin-wght-normal.woff2')}" as="font" type="font/woff2" crossorigin>
+${LOCAL ? '' : `<link rel="preload" href="${url('fonts/fraunces-latin-wght-normal.woff2')}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="${url('fonts/inter-latin-wght-normal.woff2')}" as="font" type="font/woff2" crossorigin>`}
 <link rel="stylesheet" href="${url('assets/main.css')}">
 <script>document.documentElement.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('anim')</script>
 ${jsonld.map((j) => `<script type="application/ld+json">${JSON.stringify(j)}</script>`).join('\n')}
